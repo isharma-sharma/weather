@@ -5,6 +5,7 @@ import GoogleMap from '../components/google_map';
 
 class WeatherList extends Component {
   renderWeather(cityData){
+    console.log('thisiscityData', cityData)
     const name = cityData.city.name;
     const temps = _.map(cityData.list.map(weather => weather.main.temp),(temp)=> temp-273)
     const pressures  =  cityData.list.map(weather => weather.main.pressure)
@@ -34,7 +35,7 @@ class WeatherList extends Component {
           </tr>
         </thead>
         <tbody>
-          {this.props.weather.map(this.renderWeather)}
+          { this.props.weather.map(this.renderWeather) }
         </tbody>
       </table>
     )
